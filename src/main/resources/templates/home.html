@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="TIYChocolateApp">
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+<!--
+{{=<% %>=}}
+-->
+<head>
+    <link rel="stylesheet" type="text/css" href="../static/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+    <meta charset="UTF-8">
+
+    <script src="js/com-ng-controller.js"></script>
+    <script src="../static/js/com-ng-controller.js"></script>
+
+    <title>Title</title>
+</head>
+
+<body ng-controller="ChocolateController" align="center">
+
+<h1 align="center">Welcome to my chocolate Factory!</h1>
+<br/><br/>
+How many Bic Bois do you want in your chocolate? (5Kg)<br/>
+<input type="number" ng-model="input.numBigs"/>
+<br/>
+How many Small Bois do you want in your chocolate? (1Kg)<br/>
+<input type="number" ng-model="input.numSmalls"/>
+<br/>
+How much SUMBOWDEE do you want to make? (In Kg)<br/>
+<input type="number" ng-model="input.numGoals"/>
+<br/>
+<button ng-click="makeChocolate(input.numSmalls, input.numBigs, input.numGoals)"> Button </button>
+
+
+<br/><br/>
+
+<br/><br/><br/><br/>
+
+<div>
+<div ng-repeat="chocIndex in makeArray(input.numBigs)">
+    <div class="choc-big-bar">{{chocIndex + 1}}</div>
+</div>
+
+<div ng-repeat="chocNextIndex in makeArray(input.numSmalls)">
+    <div class="choc-small-bar">{{chocNextIndex + 1}}</div>
+</div>
+</div>
+
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+<div>
+    <div ng-repeat="chocBIGIndex in makeArray(whateverThisIs.bigs)">
+        <div class="choc-big-bar">{{chocBIGIndex + 1}}</div>
+    </div>
+
+    <div ng-repeat="chocSMALLIndex in makeArray(whateverThisIs.smalls)">
+        <div class="choc-small-bar">{{chocSMALLIndex + 1}}</div>
+    </div>
+        <div ng-if="whateverThisIs.hasSolution == false">
+            NOPE.
+        </div>
+    </div>
+
+</body>
+
+</html>
